@@ -59,3 +59,87 @@
     #Yes
     #depends on circumstance
     #idk
+
+#For me second stage i will begin production of code
+#I am starting of with the bare necessaties
+
+from dataclasses import dataclass
+from PySide6.QtWidgets import *
+from PySide6.QtCore import Qt
+from PySide6.QtGui import QPixmap
+
+app = QApplication()
+main_window = QMainWindow()
+main_window.setWindowTitle("Title Goes Here")
+main_window.resize(1280, 720)
+
+# Set up main window's widget
+main_widget = QWidget()
+main_vbox = QHBoxLayout()
+main_widget.setLayout(main_vbox)
+
+# Set up widgets
+label = QLabel("Label text")
+text_field = QLineEdit("Default text")
+button = QPushButton("Button Text")
+
+# Add widgets to main layout
+main_vbox.addWidget(label)
+main_vbox.addWidget(text_field)
+main_vbox.addWidget(button)
+
+# Run the program
+main_window.show()
+# main_window.showFullScreen()
+
+# Main layout — left to right
+outer_hbox = QHBoxLayout()
+
+# Left side
+left_widget = QWidget()
+left_vbox = QVBoxLayout()
+
+# Left widgets
+left_label_01 = QLabel("01")
+left_label_02 = QLabel("02")
+left_label_03 = QLabel("03")
+
+# Left layout
+left_vbox.addWidget(left_label_01)
+left_vbox.addWidget(left_label_02)
+left_vbox.addWidget(left_label_03)
+
+# Centre
+centre_widget = QWidget()
+centre_vbox = QVBoxLayout()
+
+# Centre widgets
+centre_label_01 = QLabel("01")
+centre_label_02 = QLabel("02")
+centre_label_03 = QLabel("03")
+
+# Centre layout
+centre_vbox.addWidget(centre_label_01)
+centre_vbox.addWidget(centre_label_02)
+centre_vbox.addWidget(centre_label_03)
+
+# Right side
+right_widget = QWidget()
+right_vbox = QVBoxLayout()
+
+# Right widgets
+right_label_01 = QLabel("01")
+right_label_02 = QLabel("02")
+right_label_03 = QLabel("03")
+
+# Right layout
+right_vbox.addWidget(right_label_01)
+right_vbox.addWidget(right_label_02)
+right_vbox.addWidget(right_label_03)
+
+# Add the three columns to the main layout
+outer_hbox.addWidget(left_widget)
+outer_hbox.addWidget(centre_widget)
+outer_hbox.addWidget(right_widget)
+
+app.exec()
